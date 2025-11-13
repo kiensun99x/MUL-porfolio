@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Portfolio</title>
+    <style>
+        /* 🌈 Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #fff);
+            color: #333;
+            min-height: 100vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* ✨ Animations */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes float {
+            0%, 100% {transform: translateY(0);}
+            50% {transform: translateY(-10px);}
+        }
+
+        /* 🧱 Layout */
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 30px 50px;
+            max-width: 800px;
+            width: 100%;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        h1 {
+            color: #00796b;
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #009688;
+            border-left: 4px solid #009688;
+            padding-left: 10px;
+            margin: 30px 0 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: circle;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        /* 🖼️ Images & Media */
+        img.profile {
+            width: 250px;
+            border-radius:15%;
+            display: block;
+            margin: 15px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        img.gif {
+            width: 400px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        audio, video {
+            display: block;
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        /* 🎨 Hover Effects */
+        h1:hover {
+            color: #004d40;
+            transition: color 0.3s;
+        }
+
+        ul li:hover {
+            color: #00796b;
+            transform: translateX(5px);
+            transition: all 0.2s;
+        }
+
+        /* 🕓 Clock */
+        #clock {
+            font-size: 1em;
+            color: #555;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        /* 💬 Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="clock"></div>
+        <h1>Hello, I'm Nguyen Trung Kien 👋</h1>
+        <img src="media/profile.JPG" alt="My photo" class="profile">
+
+        <p>Welcome to my personal website! I’m a student passionate about web development, design, and digital media. I enjoy creating projects that combine creativity and technology to make learning more interactive and enjoyable.</p>
+
+        <h2>🎓 Academic Experience</h2>
+        <ul>
+            <li>Major: Information Technology</li>
+            <li>Completed: HTML, CSS, and JavaScript Basics</li>
+            <li>Project: Building personal portfolio websites</li>
+        </ul>
+
+        <h2>🎵 My Hobbies</h2>
+        <ul>
+            <li>Listening to music</li>
+            <li>Photography and travel</li>
+            <li>Creating small web animations</li>
+        </ul>
+
+        <p>🎧 Here's one of my favorite songs:</p>
+        <audio controls>
+            <source src="media/intro.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h2>🎥 A Glimpse into My Hobby</h2>
+        <video width="400" height="240" controls>
+            <source src="media/hobby.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h2>✨ Favorite scene</h2>
+        <img src="media/animation.gif" alt="Funny animation" class="gif">
+    </div>
+
+    <footer>© 2025 Nguyen Trung Kien| Created with ❤️ and HTML5</footer>
+
+    <script>
+        // 🕒 Real-time Clock
+        function updateClock() {
+            const now = new Date();
+            const clock = document.getElementById("clock");
+            clock.textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // 👋 Welcome Message
+        window.onload = function() {
+            alert("Welcome to my personal website!");
+        };
+    </script>
+</body>
+</html>
